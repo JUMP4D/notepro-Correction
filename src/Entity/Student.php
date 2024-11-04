@@ -83,12 +83,15 @@ class Student extends User
 
         $sum = 0;
         $sumBareme = 0;
+        $average = 0;
 
-        foreach ($this->getGrades() as $grade) {
-            $sum += $grade->getGrade();
-            $sumBareme += $grade->getEvaluation()->getBareme();
+        if(!$this->getGrades()->isEmpty()){
+            foreach ($this->getGrades() as $grade) {
+                $sum += $grade->getGrade();
+                $sumBareme += $grade->getEvaluation()->getBareme();
+            }
+            $average = number_format($sum / $sumBareme * 20, 1);
         }
-
-        return $sum / $sumBareme * 20;
+        return $average;
     }
 }
