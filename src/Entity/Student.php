@@ -74,4 +74,21 @@ class Student extends User
         }
         return null;
     }
+
+    public function getAverageNote(): ?string
+    {
+        if (count($this->getGrades()) == 0) {
+            return 0;
+        }
+
+        $sum = 0;
+        $sumBareme = 0;
+
+        foreach ($this->getGrades() as $grade) {
+            $sum += $grade->getGrade();
+            $sumBareme += $grade->getEvaluation()->getBareme();
+        }
+
+        return $sum / $sumBareme * 20;
+    }
 }

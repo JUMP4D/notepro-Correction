@@ -58,14 +58,5 @@ final class Version20241014074712 extends AbstractMigration
         $this->addSql('ALTER TABLE professor_class_level DROP FOREIGN KEY FK_92118DC5EB7F80F7');
         $this->addSql('ALTER TABLE professor_subject DROP FOREIGN KEY FK_A4E1512E7D2D84D5');
         $this->addSql('ALTER TABLE professor_subject DROP FOREIGN KEY FK_A4E1512E23EDC87');
-        $this->addSql('DROP TABLE class_level');
-        $this->addSql('DROP TABLE evaluation');
-        $this->addSql('DROP TABLE grade');
-        $this->addSql('DROP TABLE `previous_passwords`');
-        $this->addSql('DROP TABLE reset_password_request');
-        $this->addSql('DROP TABLE subject');
-        $this->addSql('DROP TABLE `user`');
-        $this->addSql('DROP TABLE professor_class_level');
-        $this->addSql('DROP TABLE professor_subject');
     }
 }

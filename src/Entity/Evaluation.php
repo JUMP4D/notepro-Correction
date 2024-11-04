@@ -161,4 +161,16 @@ class Evaluation
         }
         return null;
     }
+
+    public function getAveragenote(): ?string
+    {
+        $sum = 0;
+        $count = 0;
+        foreach ($this->getGrades() as $grade) {
+            $sum += $grade->getGrade();
+            $count++;
+        }
+
+        return $sum / $count;
+    }
 }
